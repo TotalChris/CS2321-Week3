@@ -3,35 +3,32 @@ package cs2321;
 import net.datastructures.Stack;
 
 public class DLLStack<E> implements Stack<E> {
-
+	
+	private DoublyLinkedList<E> internalContents = new DoublyLinkedList<E>();
+	
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return internalContents.size();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return internalContents.isEmpty();
 	}
 
 	@Override
 	public void push(E e) {
-		// TODO Auto-generated method stub
-		
+		internalContents.addFirst(e);
 	}
 
 	@Override
 	public E top() {
-		// TODO Auto-generated method stub
-		return null;
+		return internalContents.first().getElement();
 	}
 
 	@Override
 	public E pop() {
-		// TODO Auto-generated method stub
-		return null;
+		return internalContents.removeFirst();
 	}
 
 }
